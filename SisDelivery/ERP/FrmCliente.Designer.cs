@@ -1,4 +1,4 @@
-﻿namespace SisDelivery.ERP
+﻿namespace SisDelivery
 {
     partial class FrmCliente
     {

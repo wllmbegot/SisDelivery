@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace SisDelivery.ERP
+namespace SisDelivery
 {
     public partial class FrmCliente : Form
     {

@@ -199,7 +199,7 @@ namespace SisDelivery.DAO
             SqlCommand command = null;
             StringBuilder sql = new StringBuilder();
 
-            if (pSISCategoriaTO.tag.Equals("PopularGridCategoria"))
+            if (pSISCategoriaTO.tag.Equals("PopularComboBoxCategoria"))
             {
                 sql.Append(" SELECT ");
                 sql.Append(" CAT_NOME, CAT_DESCRICAO , CAT_CODIGO ");

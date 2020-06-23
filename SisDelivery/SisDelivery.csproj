@@ -48,8 +48,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BO\SISCategoria_BO.cs" />
+    <Compile Include="BO\SISEstoque_BO.cs" />
+    <Compile Include="BO\SISItemPedido_BO.cs" />
+    <Compile Include="BO\SISPedido_BO.cs" />
     <Compile Include="BO\SISProduto_BO.cs" />
     <Compile Include="DAO\SISCategoria_DAO.cs" />
+    <Compile Include="DAO\SISEstoque_DAO.cs" />
+    <Compile Include="DAO\SISItemPedido_DAO.cs" />
+    <Compile Include="DAO\SISPedido_DAO.cs" />
+    <Compile Include="DAO\SISVendas_DAO.cs" />
     <Compile Include="ERP\FrmCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,11 +69,17 @@
     <Compile Include="ERP\FrmCliente.Designer.cs">
       <DependentUpon>FrmCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="ERP\FrmMenu.cs">
+    <Compile Include="ERP\FrmEstoque.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ERP\FrmMenu.Designer.cs">
-      <DependentUpon>FrmMenu.cs</DependentUpon>
+    <Compile Include="ERP\FrmEstoque.Designer.cs">
+      <DependentUpon>FrmEstoque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ERP\FrmPedidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ERP\FrmPedidos.Designer.cs">
+      <DependentUpon>FrmPedidos.cs</DependentUpon>
     </Compile>
     <Compile Include="ERP\FrmPrincipal.cs">
       <SubType>Form</SubType>
@@ -80,8 +93,18 @@
     <Compile Include="ERP\FrmVendas.Designer.cs">
       <DependentUpon>FrmVendas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Infraestrutura\Extensoes.cs" />
+    <Compile Include="Infraestrutura\GestorCriptografia.cs" />
+    <Compile Include="Infraestrutura\Globais.cs" />
+    <Compile Include="Infraestrutura\TipoMensagem.cs" />
     <Compile Include="Infraestrutura\TransactionScopeDefault.cs" />
+    <Compile Include="Infraestrutura\Uteis.cs" />
+    <Compile Include="Infraestrutura\XMLConfiguracaoERP.cs" />
     <Compile Include="TO\SISCategoria_TO.cs" />
+    <Compile Include="TO\SISCliente_TO.cs" />
+    <Compile Include="TO\SISEstoque_TO.cs" />
+    <Compile Include="TO\SISItemPedido_TO.cs" />
+    <Compile Include="TO\SISPedido_TO.cs" />
     <Compile Include="TO\SISProduto_TO.cs" />
     <Compile Include="DAO\SISProduto_DAO.cs" />
     <Compile Include="ERP\FrmProduto.cs">
@@ -98,6 +121,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ERP\FrmCliente.resx">
       <DependentUpon>FrmCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ERP\FrmEstoque.resx">
+      <DependentUpon>FrmEstoque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ERP\FrmPedidos.resx">
+      <DependentUpon>FrmPedidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ERP\FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
@@ -116,6 +145,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -130,6 +160,20 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="resources\17115838791536572526-20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\2944585831586788051-20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\restorescreen_83843.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\4094795401543238922-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\8712887771580818292-32.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

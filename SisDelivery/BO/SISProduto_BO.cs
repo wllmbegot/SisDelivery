@@ -2,6 +2,7 @@
 using SisDelivery.DAO;
 using SisDelivery.Infraestrutura;
 using System.Data;
+using SisDelivery.TO;
 
 namespace SisDelivery.BO
 {
@@ -53,7 +54,6 @@ namespace SisDelivery.BO
 
             return lresultado;
         }
-
         public bool Delete(SISProduto_TO pSISProdutoBO, bool pOpcao)
         {
             try
@@ -65,7 +65,6 @@ namespace SisDelivery.BO
                 throw;
             }
         }
-
         public DataTable GetProdutos(SISProduto_TO pSISProdutoTO)
         {
             if (!string.IsNullOrEmpty(pSISProdutoTO.tag))
@@ -79,7 +78,32 @@ namespace SisDelivery.BO
 
             return new SISProduto_DAO().GetProdutos(pSISProdutoTO);
         }
+        public DataTable GetProdutoAtivo(SISProduto_TO pSISProdutoTO)
+        {
+            if (!string.IsNullOrEmpty(pSISProdutoTO.tag))
+            {
+                if (pSISProdutoTO.tag.Equals("PopComboxProduto"))
+                {
+                    pSISProdutoTO.query = " ORDER BY PROD.CAT_CODIGO ";
+                }
+                if (pSISProdutoTO.tag.Equals("LookUpEstoqueProduto"))
+                {
+                    pSISProdutoTO.query = " WHERE EST.EST_CODIGO IS NULL ";
+                }
+                if (pSISProdutoTO.tag.Equals("PopularMenuProduto"))
+                {
 
-      
+                }
+                if (pSISProdutoTO.tag.Equals("PopularComboBoxProduto"))
+                {
+
+                }
+
+            }
+
+            return new SISProduto_DAO().GetProdutoAtivo(pSISProdutoTO);
+        }
+
+
     }
 }

@@ -9,15 +9,38 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SisDelivery.BO;
-
+using SisDelivery.Infraestrutura;
 
 namespace SisDelivery
 {
     public partial class FrmCategoria : Form
     {
+        private string titulo = "ERP - Begoos Burger - Cadastro de Categoria";
         public FrmCategoria()
         {
             InitializeComponent();
+            PopularGridCategoria();
+        }
+
+        private void PopularGridCategoria()
+        {
+            SISCategoria_TO SISCategoriaTO = new SISCategoria_TO();
+
+            try
+            {
+                SISCategoriaTO.tag = "PopularComboBoxCategoria";
+
+                using (DataTable dt = new SISCategoria_BO().GetCategoria(SISCategoriaTO))
+                {
+                    gridViewCategoria.DataSource = dt;
+                };
+
+            }
+            catch (Exception ex)
+            {
+
+                Uteis.ExibirMensagem(ex.Message, titulo, TipoMensagem.Erro);
+            }
         }
 
         private void btnCatSalvar_Click(object sender, EventArgs e)
@@ -28,7 +51,8 @@ namespace SisDelivery
 
         private void IniciarTela()
         {
-            throw new NotImplementedException();
+            Uteis.LimparFormulario(txtCatNome);
+            Uteis.LimparFormulario(txtCatDescricao);
         }
 
         private void SalvarCategoria(object sender, EventArgs e = null)
@@ -51,15 +75,12 @@ namespace SisDelivery
 
                 }
 
-
-               
-
-
+                
             }
-            catch (Exception)
+            catch (Exception Ex)
             {
 
-                throw;
+                MessageBox.Show("Esse erro:'" + Ex + "'Ok");
             }
         }
     }

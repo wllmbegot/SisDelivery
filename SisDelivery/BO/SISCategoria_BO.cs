@@ -94,12 +94,12 @@ namespace SisDelivery.BO
 
             if (!string.IsNullOrEmpty(pSISCategoriaTO.tag))
             {
-                if (pSISCategoriaTO.tag.Equals("PopularGridCategoria"))
+                if (pSISCategoriaTO.tag.Equals("PopularComboBoxCategoria"))
                 {
 
                 }
 
-                else if (pSISCategoriaTO.tag.Equals("PopularLookupCategoria"))
+                else if (pSISCategoriaTO.tag.Equals("PopularCoqmboBoxCategoria"))
                 {
 
                 }
